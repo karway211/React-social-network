@@ -1,0 +1,16 @@
+.content {
+    grid-area: c;
+    background-color: rgb(194, 121, 121);
+  }
+  
+  .way img {
+    width: 100%;
+    height: 300px;
+  }
+  
+  .avatar img {
+    width: 200px;
+  }
+  .item {
+      color: green;
+  }
