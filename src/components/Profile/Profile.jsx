@@ -1,16 +1,12 @@
 import React from 'react';
 import s from './Profile.module.css';
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = () => {
     return (
-      <div className={s.content}>
-        <div className={s.way}>
-          <img src="https://st2.depositphotos.com/1046670/5401/i/450/depositphotos_54014113-stock-photo-eagle.jpg" alt="img"/>
-        </div>
-        <div className={s.avatar}>
-          <img src="https://2krota.ru/wp-content/uploads/2019/02/0_i-1.jpg" alt="img"/> + descr
-        </div>
+      <div>
+        <ProfileInfo />
         <MyPosts />
       </div>
     );
