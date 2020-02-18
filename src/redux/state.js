@@ -1,5 +1,6 @@
-import { rerenderEntireTree } from "../render"
-
+let rerenderEntireTree = () => {
+  console.log('state changed')
+}
 
 const state = {
   profilePage: {
@@ -9,7 +10,9 @@ const state = {
       {id: 2, message: 'I am fine!', likesCount: 25},
       {id: 3, message: 'Bla-bla!', likesCount: 12},
       {id: 4, message: 'Da-da!', likesCount: 27}
-    ]
+    ],
+
+    newPostText: 'it-camasutra.com'
 
   },
   
@@ -31,20 +34,47 @@ const state = {
       {id: 4, message: 'Yo'},
       {id: 5, message: 'Yo'},
       {id: 6, message: 'Yo'}
-    ]
+    ],
+
+    newDialogsText: 'newDialog'
     
   }
 
 }
 
-export const addPost = (postMessage) => {
+export const addPost = () => {
   const newPost = {
     id: 5,
-    message: postMessage,
+    message: state.profilePage.newPostText,
     likesCount: 0
   }
   state.profilePage.posts.push(newPost);
+  state.profilePage.newPostText = '';
   rerenderEntireTree(state);
+}
+
+export const addDialogs = () => {
+  const newDialogs = {
+    id: 5,
+    message: state.dialogsPage.newDialogsText
+  }
+  state.dialogsPage.messages.push(newDialogs);
+  state.dialogsPage.newDialogsText = '';
+  rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+  state.profilePage.newPostText = newText;
+  rerenderEntireTree(state);
+}
+
+export const updateNewDialogsText = (newDialogs) => {
+  state.dialogsPage.newDialogsText = newDialogs;
+  rerenderEntireTree(state);
+}
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
 }
 
 export default state;

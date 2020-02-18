@@ -1,9 +1,26 @@
 import * as serviceWorker from './serviceWorker';
-import state from './redux/state.js';
-import { rerenderEntireTree } from './render';
+import state, { subscribe } from './redux/state.js';
+// import { rerenderEntireTree } from './render';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import {addPost,addDialogs , updateNewPostText, updateNewDialogsText} from './redux/state.js'
+
+// addPost('samurai');
+const rerenderEntireTree = (state) => {
+    ReactDOM.render(<App 
+        state={state}
+        addPost={addPost}
+        addDialogs={addDialogs}
+        updateNewPostText={updateNewPostText}
+        updateNewDialogsText={updateNewDialogsText} />, document.getElementById('root'));
+}
 
 
 rerenderEntireTree(state);
+
+subscribe(rerenderEntireTree);
 
 
 // If you want your app to work offline and load faster, you can change
