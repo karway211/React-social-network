@@ -36,11 +36,11 @@ const Dialogs = (props) => {
     const messagesElements = props.dialogsPage.messages.map((m) => <Message message={m.message} id={m.id} />);
     let newDialogsElement = React.createRef();
     const addDialogs = () => {
-      props.addDialogs();
+      props.dispatch({type: 'ADD-DIALOGS'});
     }
     const onDialogsChange = () => {
       let text = newDialogsElement.current.value;
-      props.updateNewDialogsText(text);
+      props.dispatch({type: 'UPDATE-NEW-DIALOGS-TEXT', newDialogs: text});
     }
   return (
     <div className={s.dialogs}>

@@ -10,10 +10,7 @@ import App from './App';
 const rerenderEntireTree = (state) => {
     ReactDOM.render(<App 
         state={store.getState()}
-        addPost={store.addPost.bind(store)}
-        addDialogs={store.addDialogs.bind(store)}
-        updateNewPostText={store.updateNewPostText.bind(store)}
-        updateNewDialogsText={store.updateNewDialogsText.bind(store)} />, document.getElementById('root'));
+        dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
 rerenderEntireTree(store.getState());
