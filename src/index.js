@@ -5,13 +5,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import StoreContext from './storeContext';
 
-// addPost('samurai');
+
 const rerenderEntireTree = (state) => {
-    ReactDOM.render(<App 
-        state={store.getState()}
-        dispatch={store.dispatch.bind(store)}
-        store={store} />, document.getElementById('root'));
+    ReactDOM.render(
+        <StoreContext.Provider value={store}>
+            <App />
+            {/* <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store} />  */}
+        </StoreContext.Provider>, document.getElementById('root'));
+        
 }
 
 rerenderEntireTree(store.getState());
