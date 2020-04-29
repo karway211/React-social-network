@@ -25,6 +25,7 @@ export const usersAPI = {
     getProfile(userId) {
         console.warn('Obsolete method. Please profileAPI object.')
         return profileAPI.getProfile(userId);
+        // return instance.get(`profile/${userId}`)
     }
 }
 export const profileAPI = {
@@ -43,5 +44,11 @@ export const authAPI = {
     async getMe() {
         const response = await instance.get(`auth/me`);
         return response.data;
+    },
+    login(email, password, rememberMe = false) {
+        return instance.post(`auth/login`, {email, password, rememberMe});
+    },
+    logaut() {
+        return instance.delete(`auth/login`);
     }
 }
