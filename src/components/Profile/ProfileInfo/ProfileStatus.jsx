@@ -1,7 +1,5 @@
-
 import React from 'react';
 import s from './ProfileInfo.module.css';
-// import Preloader from '../../common/Preloader/Preloader';
 
 class ProfileStatus extends React.Component {
 
@@ -57,5 +55,4 @@ class ProfileStatus extends React.Component {
     )
   }
 };
-
 export default ProfileStatus;

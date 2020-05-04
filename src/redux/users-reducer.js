@@ -71,18 +71,18 @@ const usersReducer = (state = initialState, action) => {
           // followActionCreator
 export const followSuccess = (userId) => ({ type: FOLLOW, userId });
 export const unfollowSuccess = (userId) => ({ type: UNFOLLOW, userId });
+export const toggleIsFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 export const setUsers = (users) => ({ type: SET_USERS, users});
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage});
 export const setTotalUsersCount = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount });
 export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCHING, isFetching });
-export const toggleIsFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId });
 
 //thunk
-export const getUsers = (currentPage = 1, pageSize) => {//создатель санки
+export const requestUsers = (page = 1, pageSize) => {//создатель санки
   return (dispatch) => {
-    dispatch(setCurrentPage(currentPage));
     dispatch(toggleIsFetching(true));//диспатчим экшен-крейтер
-    usersAPI.getUsers(currentPage, pageSize)
+    dispatch(setCurrentPage(page));
+    usersAPI.getUsers(page, pageSize)
         .then(data => {
           dispatch(toggleIsFetching(false)); //диспатчим экшен-крейтер
           dispatch(setUsers(data.items));//диспатчим экшен-крейтер

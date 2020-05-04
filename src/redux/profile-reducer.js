@@ -13,7 +13,7 @@ let initialState = {
     // {id: 4, message: 'Da-da!', likesCount: 27}
   ],
   profile: null,
-  status: ''
+  status: '',
 
 };
 
