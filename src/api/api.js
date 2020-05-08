@@ -41,9 +41,12 @@ export const profileAPI = {
 }
 
 export const authAPI = {
-    async getMe() {
-        const response = await instance.get(`auth/me`);
-        return response.data;
+    // async getMe() {
+    //     const response = await instance.get(`auth/me`);
+    //     return response.data;
+    // },
+    getMe(){
+       return instance.get(`auth/me`);
     },
     login(email, password, rememberMe = false) {
         return instance.post(`auth/login`, {email, password, rememberMe});

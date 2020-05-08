@@ -5,7 +5,7 @@ import { Field, reduxForm } from 'redux-form'
 import { required, maxLengthCreator } from '../../../utils/validators/validators';
 import { Element } from '../../common/FormControls/FormControls';
 
-const MyPosts = (props) => {
+const MyPosts = React.memo((props) => {
 
   let postsElement = props.posts.map((p) => <Posts message={p.message} likeCount={p.likesCount} />);
 
@@ -22,7 +22,28 @@ const MyPosts = (props) => {
         </div>
       </div>
     );
-};
+});
+// class MyPosts extends React.Component {
+
+//   render() {
+//     console.log('RENDER');
+//     let postsElement = this.props.posts.map((p) => <Posts message={p.message} likeCount={p.likesCount} />);
+  
+//     const onAddPost = (values) => {
+//       this.props.addPost(values.newPostText);
+//     }
+//     return (
+//       <div className={s.postsBlock}>
+//         <h3>My posts</h3>
+//         <AddMyPostsFormRedux onSubmit={onAddPost} />
+//         <div className={s.posts}>
+//           { postsElement }
+//         </div>
+//       </div>
+//     );
+//   }
+
+// };
 
 const maxLength10 = maxLengthCreator(10);
 

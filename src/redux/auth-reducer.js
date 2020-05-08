@@ -28,11 +28,11 @@ const authReducer = (state = initialState, action) => {
 export const setAuthUserData = (userId, login, email, isAuth) => ({ type: SET_USER_DATA, payload: { userId, login, email, isAuth } });
 
 export const getAuthUserData = () => (dispatch) => {
-  authAPI.getMe()
-            .then(data => {
-              let {id, login, email} = data.data;
-              console.log(data.data)
-                if(data.resultCode === 0) {
+  return authAPI.getMe()
+            .then(response => {
+              // console.log(data.data)
+                if(response.data.resultCode === 0) {
+                  let {id, login, email} = response.data.data;
                   dispatch(setAuthUserData(id, login, email, true));
                 }
             });
