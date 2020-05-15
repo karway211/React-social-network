@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Navbar from './components/Navbar/Navbar';
-import { Route, withRouter, BrowserRouter } from 'react-router-dom';
+import { Route, withRouter, HashRouter } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -66,11 +66,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializedApp}))(App);
 
 const MyJSApp = (props) => {
-  return <BrowserRouter>
+  return <HashRouter>
             <Provider store={store}>
                 <AppContainer />
             </Provider>
-          </BrowserRouter>
+          </HashRouter>
 }
 
 export default MyJSApp;
