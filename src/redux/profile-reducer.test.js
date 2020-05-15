@@ -1,6 +1,5 @@
 import React from 'react';
 import profileReducer, { addPostActionCreator, deletePostAC } from './profile-reducer';
-import { initializedApp } from './app-reducer';
 
 
 let state = {

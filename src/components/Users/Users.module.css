@@ -3,11 +3,6 @@
     height: 100px;
 }
 
-.selectedPage {
-font-weight: bold;
-cursor: pointer;
-}
-
 .cursorPointer {
     cursor: pointer;
 }

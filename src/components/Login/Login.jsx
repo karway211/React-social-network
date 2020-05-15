@@ -1,6 +1,6 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form'
-import { Element } from '../common/FormControls/FormControls';
+import { reduxForm } from 'redux-form'
+import { Element, createField } from '../common/FormControls/FormControls';
 import { required } from '../../utils/validators/validators';
 import { connect } from 'react-redux';
 import { login } from '../../redux/auth-reducer';
@@ -8,12 +8,15 @@ import { Redirect } from 'react-router-dom';
 import s from './../common/FormControls/FormControls.module.css';
 
 
-const LoginForm = (props) => {
+const LoginForm = ({handleSubmit, error}) => {
     const Input = Element('input')
     return (
         <div>
-            <form onSubmit={props.handleSubmit}>
-                <div>
+            <form onSubmit={handleSubmit}>
+                {createField('login', 'email', [required], Input)}
+                {createField('password', 'password', [required], Input, {type: 'password'})}
+                {createField(null, 'rememberMe', [], Input, {type: 'checkbox'}, 'remember me')}
+                {/* <div>
                     <Field placeholder={'login'} name={'email'} component={Input} validate={[required]}/>  
                 </div>
                 <div>
@@ -21,9 +24,9 @@ const LoginForm = (props) => {
                 </div>
                 <div>
                     <Field type={"checkbox"} name={'rememberMe'} component={Input}/>
-                </div>
-                {props.error && <div className={s.formSammaryError}>
-                    {props.error}
+                </div> */}
+                {error && <div className={s.formSammaryError}>
+                    {error}
                 </div>}
                 <div>
                     <button>Login</button>
