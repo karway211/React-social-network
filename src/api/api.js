@@ -1,4 +1,4 @@
-import Axios from "axios"
+import Axios from "axios";
 
 const instance = Axios.create({
     withCredentials: true,
@@ -27,7 +27,7 @@ export const usersAPI = {
         return profileAPI.getProfile(userId);
         // return instance.get(`profile/${userId}`)
     }
-}
+};
 export const profileAPI = {
     getProfile(userId) {
         return instance.get(`profile/${userId}`)
@@ -50,7 +50,7 @@ export const profileAPI = {
     saveProfile(profile) {
         return instance.put(`profile`, profile);
     }
-}
+};
 
 export const authAPI = {
     // async getMe() {
@@ -60,10 +60,15 @@ export const authAPI = {
     getMe(){
        return instance.get(`auth/me`);
     },
-    login(email, password, rememberMe = false) {
-        return instance.post(`auth/login`, {email, password, rememberMe});
+    login(email, password, rememberMe = false, captcha = null) {
+        return instance.post(`auth/login`, {email, password, rememberMe, captcha});
     },
     logaut() {
         return instance.delete(`auth/login`);
     }
-}
+};
+export const securityAPI = {
+    getCaptchaUrl(){
+       return instance.get(`security/get-captcha-url`);
+    }
+};
