@@ -5,6 +5,7 @@ import photo from '../../../assets/images/photo.png'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import { useState } from 'react';
 import ProfileDataForm from './ProfileDataForm';
+// import ReactPhoto from '../../../assets/images/React-icon.png';
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, saveProfile}) => {
 
@@ -23,13 +24,13 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
   const onSubmit = (formData) => {
     saveProfile(formData).then(() => {
       setEditMode(false);
-    }).catch(() => null);
+    });
   };
     return (
       <div>
-        <div className={s.way}>
-          <img src="https://st2.depositphotos.com/1046670/5401/i/450/depositphotos_54014113-stock-photo-eagle.jpg" alt="img"/>
-        </div>
+        {/* <div className={s.way}>
+          <img src={ReactPhoto} alt="img"/>
+        </div> */}
         <div className={s.avatar}>
           <div>
             <img src={profile.photos.large || photo} alt="img"/>

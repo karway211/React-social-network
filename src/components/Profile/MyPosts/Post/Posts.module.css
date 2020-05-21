@@ -1,8 +1,27 @@
-  .item {
+  /* .item {
       color: green;
-  }
+  } */
 
-  .item img {
+  /* .item img {
     width: 50px;
     border-radius: 50%;
-  }
+  } */
+
+.blockPost {
+  display: flex;
+  align-items: center;
+}
+
+.blockPost img {
+    width: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.likesCount {
+    cursor: pointer;
+}
+
+.likesCount img {
+    width: 20px;
+}

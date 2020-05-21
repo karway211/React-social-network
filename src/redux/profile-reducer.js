@@ -70,17 +70,29 @@ export const deletePostAC = (postId) => ({type: DELETE_POST, postId});
 export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos});
 
 export const getUserProfile = (userId) => async (dispatch) => {
-  const response = await usersAPI.getProfile(userId);
-  dispatch(setUserProfile(response.data));
+  try {
+    const response = await usersAPI.getProfile(userId);
+    dispatch(setUserProfile(response.data));
+  } catch(error) {
+    return;
+  }
 };
 export const getStatus = (userId) => async (dispatch) => {
-  const response = await profileAPI.getStatus(userId);
-  dispatch(setStatus(response.data));
+  try {
+    const response = await profileAPI.getStatus(userId);
+    dispatch(setStatus(response.data));
+  } catch(error) {
+    return;
+  }
 };
 export const updateStatus = (status) => async (dispatch) => {
-  const response = await profileAPI.updateStatus(status);
-  if(response.data.resultCode === 0) {
-    dispatch(setStatus(status));
+  try {
+    const response = await profileAPI.updateStatus(status);
+    if(response.data.resultCode === 0) {
+      dispatch(setStatus(status));
+    }
+  } catch(error) {
+    return;
   }
 };
 export const savePhoto = (title) => async (dispatch) => {

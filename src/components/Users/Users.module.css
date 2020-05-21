@@ -6,3 +6,7 @@
 .cursorPointer {
     cursor: pointer;
 }
+
+.userWrapper {
+    margin-left: 20px;
+}

@@ -1,16 +1,32 @@
 .app-wrapper {
   display: grid;
   margin: 0 auto;
-
+  height: 100vh;
   grid-template-areas: 
   "h h"
   "n c";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
 }
 
 .app-wrapper-content {
   grid-area: c;
-  background-color: rgb(51, 233, 218);
+  background-color: #40c8e0;
+  height: 100%;
+}
+
+.way img {
+  position: fixed;
+  width: 424px;
+  height: 424px;
+  right: 0;
+  bottom: 0;
+}
+
+button, input, textarea {
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
 }

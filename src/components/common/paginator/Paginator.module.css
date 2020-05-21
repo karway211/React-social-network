@@ -2,8 +2,16 @@
     margin: 10px;
 }
 .pageNumber {
+    display: inline-flex;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
     padding: 2px;
+    margin: 2px;
     border: 1px solid grey;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .pageNumber.selectedPage {
