@@ -2,9 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## [DEMO](https://karway211.github.io/React-social-network/)
 
-Email: free@samuraijs.com
+Initialization data for the demo version:
 
-Password: free
+  Email: free@samuraijs.com
+
+  Password: free
 
 ## Available Scripts
 
