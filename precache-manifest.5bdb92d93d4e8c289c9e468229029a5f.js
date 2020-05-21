@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "599d56b4c6757c7c4661b7cc11edd64f",
+    "revision": "127c074a7d66b5b10795fe98a4639e98",
     "url": "/React-social-network/index.html"
   },
   {
@@ -8,36 +8,36 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-social-network/static/css/3.1d931084.chunk.css"
   },
   {
-    "revision": "5c27a2ab871272ce2e7f",
+    "revision": "b24e35ccb2fefd5dad2a",
     "url": "/React-social-network/static/css/4.2556a2c9.chunk.css"
   },
   {
-    "revision": "4368fc09b4f86acf354d",
+    "revision": "c6d80d471addf763215d",
     "url": "/React-social-network/static/css/main.7ab4b2f9.chunk.css"
   },
   {
-    "revision": "399fbd3cf7c169802f49",
-    "url": "/React-social-network/static/js/2.96c55fe3.chunk.js"
+    "revision": "3feb1bfb6ccf0f627a78",
+    "url": "/React-social-network/static/js/2.31c9dfd0.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/React-social-network/static/js/2.96c55fe3.chunk.js.LICENSE.txt"
+    "url": "/React-social-network/static/js/2.31c9dfd0.chunk.js.LICENSE.txt"
   },
   {
     "revision": "4b140db4c55a7d0ff707",
     "url": "/React-social-network/static/js/3.66a287e6.chunk.js"
   },
   {
-    "revision": "5c27a2ab871272ce2e7f",
-    "url": "/React-social-network/static/js/4.17dedcb1.chunk.js"
+    "revision": "b24e35ccb2fefd5dad2a",
+    "url": "/React-social-network/static/js/4.4da107e6.chunk.js"
   },
   {
-    "revision": "4368fc09b4f86acf354d",
-    "url": "/React-social-network/static/js/main.60d3a253.chunk.js"
+    "revision": "c6d80d471addf763215d",
+    "url": "/React-social-network/static/js/main.adff1d23.chunk.js"
   },
   {
-    "revision": "637f47b659a8469a646b",
-    "url": "/React-social-network/static/js/runtime-main.c49ae5b6.js"
+    "revision": "28b5385ea05e8f1ce096",
+    "url": "/React-social-network/static/js/runtime-main.e0f4af29.js"
   },
   {
     "revision": "31987a52af8762826ecc23b587c73445",
