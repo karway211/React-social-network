@@ -5,27 +5,22 @@ import { authAPI, securityAPI } from "../api/api";
 const   SET_USER_DATA = 'SET_USER_DATA';
 const GET_CAPTCHA_URL_SUCCESS = 'GET_CAPTCHA_URL_SUCCESS';
 
-type InitialStateType = {
-  userId: number | null
-  login: string | null
-  email: string | null
-  isAuth: boolean
-  captchaUrl: string | null
-}
-
-let initialState: InitialStateType = {
-  userId: null,
-  login: null,
-  email: null,
-  isAuth: false,
-  captchaUrl: null
+let initialState = {
+  userId: null as number | null,
+  login: null as string | null,
+  email: null as string | null,
+  isAuth: false as boolean,
+  captchaUrl: null as string | null
 };
+
+export type InitialStateType = typeof initialState;
 
 const authReducer = (state = initialState, action: any):InitialStateType => {
   switch(action.type) {
     case GET_CAPTCHA_URL_SUCCESS:
     case SET_USER_DATA:
       return {
+        userId : 'rhrthrht',
         ...state,
         ...action.payload
       }
