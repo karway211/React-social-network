@@ -42,7 +42,7 @@ class App extends React.Component {
             <Route path='/news' render={ () => <News /> }/>
             <Route path='/music' render={ () => <Music /> }/>
             <Route path='/settings' render={ () => <Settings /> }/>
-            <Route path='/users' render={() => <UsersContainer />} />
+            <Route path='/users' render={() => <UsersContainer pageTitle={'Самураи'} />} />
             <Route path='/login' render={() => <LoginPage />} />
           </Switch>
           <div className='way'>
@@ -67,11 +67,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializedApp}))(App);
 
 const MyJSApp = (props) => {
-  return <BrowserRouter>
+  return <HashRouter>
             <Provider store={store}>
-                <AppContainer />
+              <AppContainer />
             </Provider>
-          </BrowserRouter>
+          </HashRouter>
 }
 
 export default MyJSApp;

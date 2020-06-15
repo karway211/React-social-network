@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './Users.module.css';
 import userPhoto from '../../assets/images/photo.png'
 import { NavLink } from 'react-router-dom';
+import { UserType } from '../../types/types';
 
-const User = ({user, followingInProgress, unfollow, follow}) => {
+type PropsType = {
+    user: UserType
+    followingInProgress: Array<number>
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+}
+
+const User: FC<PropsType> = ({user, followingInProgress, unfollow, follow}) => {
     return <div>
         <div className={styles.userWrapper}>
             <div className={styles.item}>

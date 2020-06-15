@@ -8,7 +8,7 @@ import thunkMiddleWare from "redux-thunk";// импортируем thunk под
 import { reducer as formReducer } from 'redux-form'
 import appReducer from "./app-reducer";
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     sidebar: sidebarReducer,
@@ -18,10 +18,15 @@ let reducers = combineReducers({
     form: formReducer
 });
 
+type RootReducerType = typeof rootReducer; // (globalstate: AppStateType) => AppStateType
+export type AppStateType = ReturnType<RootReducerType>
+
+// @ts-ignore
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; //crome redux-tools
-const store = createStore(reducers, composeEnhancers(applyMiddleware(thunkMiddleWare))); //crome redux-tools
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleWare))); //crome redux-tools
 
 // let store = createStore(reducers, applyMiddleware(thunkMiddleWare));//applyMiddleware- прими промежуточные слои
+// @ts-ignore
 window.__store__ = store;
 
 export default store;

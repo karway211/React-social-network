@@ -5,6 +5,26 @@ import { getUserProfile, updateStatus, getStatus, savePhoto, saveProfile } from 
 import { withRouter, Redirect } from 'react-router-dom';
 import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
+import { ProfileType } from '../../types/types';
+
+// type MapStatePropsType = {
+//   profile: ProfileType
+//   status: string
+//   authorizedUserId: number | null
+//   isAuth: boolean
+// }
+// type MapDispatchPropsType = {
+//   getUserProfile: (userId: number | null) => void
+//   getStatus: (userId: number) => void
+//   updateStatus: (newStatus: string) => void
+//   savePhoto: string
+//   saveProfile: null as ProfileType | null,
+
+// }
+// type OwnPropsType = {
+// }
+
+// type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType
 
 class ProfileContainer extends React.Component {
   refreshProfile() {
