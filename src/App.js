@@ -67,11 +67,11 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializedApp}))(App);
 
 const MyJSApp = (props) => {
-  return <HashRouter>
+  return <BrowserRouter>
             <Provider store={store}>
               <AppContainer />
             </Provider>
-          </HashRouter>
+          </BrowserRouter>
 }
 
 export default MyJSApp;
