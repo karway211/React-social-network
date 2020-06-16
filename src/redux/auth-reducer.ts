@@ -1,5 +1,7 @@
 import { stopSubmit } from 'redux-form';
-import { authAPI, securityAPI, ResultCodesEnum, ResultCodeForCaptcha } from "../api/api";
+import { ResultCodesEnum, ResultCodeForCaptcha } from "../api/api";
+import { authAPI } from '../api/auth-api';
+import { securityAPI } from '../api/security-api';
 
 
 const   SET_USER_DATA = 'SET_USER_DATA';
@@ -75,14 +77,14 @@ export const login = (email: string, password: string, rememberMe: boolean, capt
 };
 
 export const getCaptchaUrl = () => async (dispatch: any) => {
-  const response = await securityAPI.getCaptchaUrl();
-  const captchaUrl =  response.data.url;
+  const data = await securityAPI.getCaptchaUrl();
+  const captchaUrl =  data.url;
   dispatch(getCaptchaUrlSucces(captchaUrl));
 };
 
 export const logaut = () => async (dispatch: any) => {
-  const response = await authAPI.logaut();
-  if(response.data.resultCode === 0) {
+  const data = await authAPI.logaut();
+  if(data.resultCode === 0) {
     dispatch(setAuthUserData(null, null, null, false));
   }
 };
