@@ -18,7 +18,7 @@ export const profileAPI = {
       const res = await instance.put<APIResponseType>(`profile/status`, { status: status });
       return res.data;
   },
-  async savePhoto(photoFile: any) {
+  async savePhoto(photoFile: File) {
       const formData = new FormData();
       formData.append('image', photoFile);
       const res = await instance.put<APIResponseType<SavePhotoResponseDataType>>('profile/photo', formData, {

@@ -1,5 +1,5 @@
 import React from 'react';
-import dialogsReducer, { sendMessageCreator } from './dialogs-reducer';
+import dialogsReducer, { actions } from './dialogs-reducer';
 
 const state = {
   dialogs: [
@@ -22,12 +22,12 @@ const state = {
 };
 
 it('length of messages should be incremented', () => {
-  let action = sendMessageCreator('Add message');
+  let action = actions.sendMessageCreator('Add message');
   let newState = dialogsReducer(state, action);
   expect(newState.messages.length).toBe(7);
 });
 it('length of messages should be incremented', () => {
-  let action = sendMessageCreator('abrakadabra');
+  let action = actions.sendMessageCreator('abrakadabra');
   let newState = dialogsReducer(state, action);
   expect(newState.messages[6].message).toBe('abrakadabra');
 });
