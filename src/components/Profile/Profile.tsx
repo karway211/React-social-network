@@ -3,8 +3,18 @@ import React from 'react';
 // import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
+import { ProfileType } from '../../types/types';
 
-const Profile = (props) => {
+type PropsType = {
+  isOwner: boolean
+  profile: ProfileType | null
+  status: string
+  updateStatus: (status: string) => void
+  savePhoto: (file: File) => void
+  saveProfile: (profile: ProfileType) => Promise<any>
+}
+
+const Profile: React.FC<PropsType> = (props) => {
 
     return (
       <div>

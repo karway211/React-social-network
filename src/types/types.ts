@@ -3,6 +3,14 @@ export type PostType = {
   message: string
   likesCount: number
 }
+export type DialogType = {
+  id: number
+  name: string
+}
+export type MessageType = {
+  id: number
+  message: string
+}
 
 export type ContactsType = {
   github: string
@@ -27,6 +35,8 @@ export type ProfileType = {
   fullName: string
   contacts: ContactsType
   photos: PhotosType
+  aboutMe: string
+  lookingForAGob: string
 }
 
 export type UserType = {
